@@ -29,11 +29,21 @@ services:
   #   networks:
   #     - sonarqube-network
 
-  gradle:
+  # gradle:
+  #   build:
+  #     context: .
+  #     dockerfile: ./gradle.dockerfile
+  #   command: tail -f /dev/null
+  #   networks:
+  #     - sonarqube-network
+
+  jenkins:
     build:
       context: .
-      dockerfile: ./gradle.dockerfile
+      dockerfile: ./jenkins.dockerfile
     command: tail -f /dev/null
+    ports:
+      - "8080:8080"
     networks:
       - sonarqube-network
 
