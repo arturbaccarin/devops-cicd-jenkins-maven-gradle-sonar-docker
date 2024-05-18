@@ -18,6 +18,9 @@ RUN apt-get install -y curl
 # Install vim
 RUN apt-get install -y vim
 
+# Install git
+RUN apt-get install -y git
+
 # Clean up
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
