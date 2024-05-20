@@ -32,3 +32,13 @@ RUN apt update
 
 # Command to run when the container starts (optional)
 CMD ["/bin/bash"]
+
+# <plugin>
+# <groupId>org.sonarsource.scanner.maven</groupId>
+# <artifactId>sonar-maven-plugin</artifactId>
+# <version>3.9.1.2184</version>
+# </plugin>
+
+# mvn sonar:sonar -Dsonar.host.url=http://sonarqube:9000 -Dsonar.login=the.generated-token
+
+

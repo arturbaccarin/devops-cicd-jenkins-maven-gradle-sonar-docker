@@ -9,15 +9,15 @@ services:
   #   networks:
   #     - sonarqube-network
 
-  # sonarqube:
-  #   build:
-  #     context: .
-  #     dockerfile: ./sonarqube.dockerfile
-  #   command: tail -f /dev/null
-  #   ports:
-  #     - "9000:9000"
-  #   networks:
-  #     - sonarqube-network
+  sonarqube:
+    build:
+      context: .
+      dockerfile: ./sonarqube.dockerfile
+    command: tail -f /dev/null
+    ports:
+      - "9000:9000"
+    networks:
+      - sonarqube-network
 
   # nexus:
   #   build:
@@ -37,13 +37,21 @@ services:
   #   networks:
   #     - sonarqube-network
 
-  jenkins:
+  # jenkins:
+  #   build:
+  #     context: .
+  #     dockerfile: ./jenkins.dockerfile
+  #   command: tail -f /dev/null
+  #   ports:
+  #     - "8080:8080"
+  #   networks:
+  #     - sonarqube-network
+
+  ci-server:
     build:
       context: .
-      dockerfile: ./jenkins.dockerfile
+      dockerfile: ./ci-server.dockerfile
     command: tail -f /dev/null
-    ports:
-      - "8080:8080"
     networks:
       - sonarqube-network
 
